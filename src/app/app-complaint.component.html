@@ -1,0 +1,15 @@
+<section style="border-radius: 5px">
+<label for="num"> n/n</label><input #num type="text"  name="num" id="num"  size="4"/>
+<label for="name">Name: </label> <input #name type="text"  name="name" id="name"  size="20"/>
+<label for="address">Address:</label><input #address type="text" name="address" id="address" size="50"/>
+<label for="date">Date:</label><input type="text" name="date" id="date" size="8"/>
+<label for="compl">Complaint:</label><input type="text" name="compl" id="compl" size="50"/>
+<hr>
+<label for="disstaff">Dis.Service Staff:</label><input type="text" name="disstaff" id="disstaff" size="4"/>
+<label for="advice">Customer Advice:</label><input type="text" name="advice" id="advice" size="8"/>
+<label for="status">Complaint Status:</label><input type="text" name="status" id="status" size="7"/>
+<label for="category">Complaint Category:</label><input type="text" name="category" id="category" size="7"/>
+<label for="complited">Complited:</label><input type="text" name="complited" id="complited" size="8"/>
+<label for="distype">Dis. Type:</label><input type="text" name="distype" id="distype" size="4"/>
+  <button id="addcomplaint" name="addcomplaint" (click)="a1.addComplaint(num,name,address)">Add Complaint</button>
+</section>
