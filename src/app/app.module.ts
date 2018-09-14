@@ -1,19 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
+import {NgModule} from '@angular/core';
+import {FormControl} from '@angular/forms';
+import {FormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
-import { CustomerListComponent } from './customer-list.component';
-import { CustomerComponent } from './customer.component';
 import { AppComplaintComponent } from './app-complaint.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CustomerListComponent,
-    CustomerComponent,
     AppComplaintComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule
   ],
   providers: [],

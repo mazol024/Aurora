@@ -1,15 +1,40 @@
 <section style="border-radius: 5px">
-<label for="num"> n/n</label><input #num type="text"  name="num" id="num"  size="4"/>
-<label for="name">Name: </label> <input #name type="text"  name="name" id="name"  size="20"/>
-<label for="address">Address:</label><input #address type="text" name="address" id="address" size="50"/>
-<label for="date">Date:</label><input type="text" name="date" id="date" size="8"/>
-<label for="compl">Complaint:</label><input type="text" name="compl" id="compl" size="50"/>
+  <form>
+<label for="num"> n/n</label><input #num type="text"  name="num" id="num"  size="4" [(ngModel)]=customer.num />
+<label for="name">Name: </label> <input #name type="text"  name="name" id="name"  size="20" [(ngModel)]=customer.name />
+<label for="address">Address:</label><input #address type="text" name="address" id="address" size="50" [(ngModel)]=customer.address />
+<label for="date">Date:</label><input type="text" name="date" id="date" size="8" [(ngModel)]=customer.date />
+<label for="compl">Complaint:</label><input type="text" name="compl" id="compl" size="50" [(ngModel)]=customer.compl />
 <hr>
-<label for="disstaff">Dis.Service Staff:</label><input type="text" name="disstaff" id="disstaff" size="4"/>
-<label for="advice">Customer Advice:</label><input type="text" name="advice" id="advice" size="8"/>
-<label for="status">Complaint Status:</label><input type="text" name="status" id="status" size="7"/>
-<label for="category">Complaint Category:</label><input type="text" name="category" id="category" size="7"/>
-<label for="complited">Complited:</label><input type="text" name="complited" id="complited" size="8"/>
-<label for="distype">Dis. Type:</label><input type="text" name="distype" id="distype" size="4"/>
-  <button id="addcomplaint" name="addcomplaint" (click)="a1.addComplaint(num,name,address)">Add Complaint</button>
+<label for="disstaff">Dis.Service Staff:</label><input type="text" name="disstaff" id="disstaff" size="4" [(ngModel)]=customer.disstaff />
+<label for="advice">Customer Advice:</label><input type="text" name="advice" id="advice" size="8" [(ngModel)]=customer.advice />
+<label for="status">Complaint Status:</label><input type="text" name="status" id="status" size="7" [(ngModel)]=customer.status />
+<label for="category">Complaint Category:</label><input type="text" name="category" id="category" size="7" [(ngModel)]=customer.category />
+<label for="complited">Complited:</label><input type="text" name="complited" id="complited" size="8" [(ngModel)]=customer.complited />
+<label for="distype">Dis. Type:</label><input type="text" name="distype" id="distype" size="4" [(ngModel)]=customer.distype />
+  <button id="addcomplaint" name="addcomplaint" (click)="addComplaint()">Add Complaint</button>
+  </form>
 </section>
+<br/>
+<hr>
+
+<h2>
+<em> Voltage Complaints Register</em>
+</h2>
+<br/>
+<div class='customerList'>
+  <div class="line01" *ngFor="let customer of customerList" >
+    <div class='customer'>{{customer.num}}</div>
+    <div class='customer'>{{customer.name}}</div>
+    <div class='customer'>{{customer.address}}</div>
+    <div class='customer'>{{customer.date}}</div>
+    <div class='customer'>{{customer.compl}}</div>
+    <div class='customer'>{{customer.disstaff}}</div>
+    <div class='customer'>{{customer.advice}}</div>
+    <div class='customer'>{{customer.status}}</div>
+    <div class='customer'>{{customer.category}}</div>
+    <div class='customer'>{{customer.complited}}</div>
+    <div class='customer'>{{customer.distype}}</div>
+    <div style="clear: left"></div>
+  </div>
+</div>

@@ -5,7 +5,11 @@
   height: 91px;
   background-color: #f58220;
 }
-app-customer:hover {
-  border: white 1px;
-  background-color: yellow;
+.line01:hover {
+  border: black 1px;
+  background-color: aquamarine;
+}
+
+h2 {
+  color: black;
 }

@@ -1,0 +1,12 @@
+.customer {
+  float: left;
+  color: white;
+  background-color:#f58220;
+  margin:2px;
+  padding:3px;
+  border-radius: 5px;
+}
+.customerList {
+  background-color: lightcyan;
+
+}
