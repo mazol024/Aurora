@@ -1,17 +1,17 @@
 <section style="border-radius: 5px">
   <form>
-<label for="num"> n/n</label><input #num type="text"  name="num" id="num"  size="4" [(ngModel)]=customer.num />
-<label for="name">Name: </label> <input #name type="text"  name="name" id="name"  size="20" [(ngModel)]=customer.name />
-<label for="address">Address:</label><input #address type="text" name="address" id="address" size="50" [(ngModel)]=customer.address />
-<label for="date">Date:</label><input type="text" name="date" id="date" size="8" [(ngModel)]=customer.date />
-<label for="compl">Complaint:</label><input type="text" name="compl" id="compl" size="50" [(ngModel)]=customer.compl />
+<label for="num"> n/n</label><input #num type="text"  name="num" id="num"  size="4" [(ngModel)]="abonent.num" />
+<label for="name">Name: </label> <input #name type="text"  name="name" id="name"  size="20" [(ngModel)]="abonent.name" />
+<label for="address">Address:</label><input #address type="text" name="address" id="address" size="50" [(ngModel)]="abonent.address" />
+<label for="date">Date:</label><input type="text" name="date" id="date" size="8" [(ngModel)]="abonent.date" />
+<label for="compl">Complaint:</label><input type="text" name="compl" id="compl" size="50" [(ngModel)]="abonent.compl" />
 <hr>
-<label for="disstaff">Dis.Service Staff:</label><input type="text" name="disstaff" id="disstaff" size="4" [(ngModel)]=customer.disstaff />
-<label for="advice">Customer Advice:</label><input type="text" name="advice" id="advice" size="8" [(ngModel)]=customer.advice />
-<label for="status">Complaint Status:</label><input type="text" name="status" id="status" size="7" [(ngModel)]=customer.status />
-<label for="category">Complaint Category:</label><input type="text" name="category" id="category" size="7" [(ngModel)]=customer.category />
-<label for="complited">Complited:</label><input type="text" name="complited" id="complited" size="8" [(ngModel)]=customer.complited />
-<label for="distype">Dis. Type:</label><input type="text" name="distype" id="distype" size="4" [(ngModel)]=customer.distype />
+<label for="disstaff">Dis.Service Staff:</label><input type="text" name="disstaff" id="disstaff" size="4" [(ngModel)]="abonent.disstaff" />
+<label for="advice">Customer Advice:</label><input type="text" name="advice" id="advice" size="8" [(ngModel)]="abonent.advice" />
+<label for="status">Complaint Status:</label><input type="text" name="status" id="status" size="7" [(ngModel)]="abonent.status" />
+<label for="category">Complaint Category:</label><input type="text" name="category" id="category" size="7" [(ngModel)]="abonent.category" />
+<label for="complited">Complited:</label><input type="text" name="complited" id="complited" size="8" [(ngModel)]="abonent.complited" />
+<label for="distype">Dis. Type:</label><input type="text" name="distype" id="distype" size="4" [(ngModel)]="abonent.distype" />
   <button id="addcomplaint" name="addcomplaint" (click)="addComplaint()">Add Complaint</button>
   </form>
 </section>
@@ -22,21 +22,21 @@
 <em> Voltage Complaints Register</em>
 </h2>
 <br/>
-<div class='customerList'>
-  <div class="line01" *ngFor="let customer of customerList" (click)="onSelectRow(customer.num, customer.name, customer.address,
-  customer.date, customer.compl, customer.disstaff, customer.advice, customer.status, customer.category,
-  customer.complited, customer.distype)">
-    <div class='customer'>{{customer.num}}</div>
-    <div class='customer'>{{customer.name}}</div>
-    <div class='customer'>{{customer.address}}</div>
-    <div class='customer'>{{customer.date}}</div>
-    <div class='customer'>{{customer.compl}}</div>
-    <div class='customer'>{{customer.disstaff}}</div>
-    <div class='customer'>{{customer.advice}}</div>
-    <div class='customer'>{{customer.status}}</div>
-    <div class='customer'>{{customer.category}}</div>
-    <div class='customer'>{{customer.complited}}</div>
-    <div class='customer'>{{customer.distype}}</div>
+<div class='complaintsList'>
+  <div class="line01" *ngFor="let abonent of complaintsList" (click)="onSelectRow(abonent.num, abonent.name, abonent.address,
+  abonent.date, abonent.compl, abonent.disstaff, abonent.advice, abonent.status, abonent.category,
+  abonent.complited, abonent.distype)">
+    <div class='complaint'>{{abonent.num}}</div>
+    <div class='complaint'>{{abonent.name}}</div>
+    <div class='complaint'>{{abonent.address}}</div>
+    <div class='complaint'>{{abonent.date}}</div>
+    <div class='complaint'>{{abonent.compl}}</div>
+    <div class='complaint'>{{abonent.disstaff}}</div>
+    <div class='complaint'>{{abonent.advice}}</div>
+    <div class='complaint'>{{abonent.status}}</div>
+    <div class='complaint'>{{abonent.category}}</div>
+    <div class='complaint'>{{abonent.complited}}</div>
+    <div class='complaint'>{{abonent.distype}}</div>
     <div style="clear: left"></div>
   </div>
 </div>

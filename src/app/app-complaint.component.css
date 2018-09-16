@@ -1,4 +1,4 @@
-.customer {
+.complaint {
   float: left;
   color: white;
   background-color:#f58220;
@@ -6,7 +6,7 @@
   padding:3px;
   border-radius: 5px;
 }
-.customerList {
+.complaintsList {
   background-color: lightcyan;
 
 }
