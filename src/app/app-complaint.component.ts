@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {FormControl} from '@angular/forms';
 import {NgModule} from '@angular/core';
+import {st} from '@angular/core/src/render3';
 
 @Component({
   selector: 'app-complaint',
@@ -9,9 +10,9 @@ import {NgModule} from '@angular/core';
   styleUrls: ['app-complaint.component.css']
 })
 export class AppComplaintComponent implements OnInit {
-  customer = {num: '', name: 'this.nameDot', address: 'this.addressDot'
-    , date: '22/02/2015', compl: 'Flicking during mornig',
-    disstaff: 'NF', advice: '12/03/2015', status: 'Finish', category: 'LV', complited: '12/03/2015', distype: 'Low'
+  customer = {num: '', name: '', address: ''
+    , date: '', compl: '',
+    disstaff: '', advice: '', status: '', category: '', complited: '', distype: ''
   };
   customerList = [
     { num: 'CQ3/12', name: 'Brian', address: '8 View St, Dunedin, 9016', date: '22/02/2015', compl: 'Flicking during mornig',
@@ -30,10 +31,27 @@ export class AppComplaintComponent implements OnInit {
   ];
   addComplaint() {
     this.customerList.push(this.customer);
+    this.customer = {num: '', name: '', address: ''
+      , date: '', compl: '',
+      disstaff: '', advice: '', status: '', category: '', complited: '', distype: ''
+    };
   }
 
   constructor() {}
 
   ngOnInit() {}
-
+  onSelectRow(num, name, address, date, compl, disstaff, advice, status, category, complited, distype ) {
+    /*this.customerList.push({num, name, address, date, compl, disstaff, advice, status, category, complited, distype});*/
+    this.customer.num = num;
+    this.customer.name = name;
+    this.customer.address = address;
+    this.customer.date = date;
+    this.customer.compl = compl;
+    this.customer.disstaff = disstaff;
+    this.customer.advice = advice;
+    this.customer.status = status;
+    this.customer.category = category;
+    this.customer.complited = complited;
+    this.customer.distype = distype;
+  }
 }

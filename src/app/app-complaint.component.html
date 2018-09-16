@@ -23,7 +23,9 @@
 </h2>
 <br/>
 <div class='customerList'>
-  <div class="line01" *ngFor="let customer of customerList" >
+  <div class="line01" *ngFor="let customer of customerList" (click)="onSelectRow(customer.num, customer.name, customer.address,
+  customer.date, customer.compl, customer.disstaff, customer.advice, customer.status, customer.category,
+  customer.complited, customer.distype)">
     <div class='customer'>{{customer.num}}</div>
     <div class='customer'>{{customer.name}}</div>
     <div class='customer'>{{customer.address}}</div>
