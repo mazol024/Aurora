@@ -4,6 +4,7 @@ import {FormControl} from '@angular/forms';
 import {NgModule} from '@angular/core';
 import {st} from '@angular/core/src/render3';
 import {forEach} from '@angular/router/src/utils/collection';
+import {RouterModule, Routes} from '@angular/router';
 
 @Component({
   selector: 'app-complaint',

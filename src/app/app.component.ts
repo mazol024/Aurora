@@ -3,11 +3,14 @@ import {FormControl} from '@angular/forms';
 import {FormsModule} from '@angular/forms';
 import {Browser} from 'selenium-webdriver';
 import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import { Router, ActivatedRoute, ActivatedRouteSnapshot} from '@angular/router';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-component',
   templateUrl: 'app.component.html',
-  styles: ['.app {color: white; background-color:#f58220;margin:3px;padding: 3px;}']
+  styleUrls: ['app.component.css']
 })
 export class AppComponent {
+  title = 'Aurora';
 }
