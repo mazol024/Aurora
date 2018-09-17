@@ -6,16 +6,7 @@ import {NgModule} from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  template: `
-    <div class="app">
-      <h2>
-      <em>Voltage Complaints Form</em>
-      </h2>
-      <br/>
-    <app-complaint></app-complaint>
-    </div>
-    <br/>
-   `,
+  templateUrl: 'app.component.html',
   styles: ['.app {color: white; background-color:#f58220;margin:3px;padding: 3px;}']
 })
 export class AppComponent {
