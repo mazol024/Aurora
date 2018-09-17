@@ -1,9 +1,9 @@
 <div class="app">
   <h1 id="navMenu" >
-    <button #rla="routerLinkActive" routerLink="/complaints" routerLinkActive [style.color]="rla.isActive?'white':'black'" >VOLTAGE COMPLAINTS</button>
-    <button #rla1="routerLinkActive" routerLink="/outages" routerLinkActive [style.color]="rla1.isActive?'white':'black'" >OUTAGES COMPLAINTS</button>
-    <button #rla2="routerLinkActive" routerLink="/about" routerLinkActive [style.color]="rla2.isActive?'white':'black'" >ABOUT</button>
-    <button #rla3="routerLinkActive" routerLink="/mainsite" routerLinkActive [style.color]="rla3.isActive?'white':'black'" >AURORA</button>
+    <button routerLinkActive="menuActive" routerLink="/complaints" >VOLTAGE COMPLAINTS</button>
+    <button routerLinkActive="menuActive" routerLink="/outages" >OUTAGES COMPLAINTS</button>
+    <button routerLinkActive="menuActive" routerLink="/about" >ABOUT</button>
+    <button routerLinkActive="menuActive" routerLink="/mainsite" >AURORA</button>
   </h1>
   <router-outlet></router-outlet>
 </div>
