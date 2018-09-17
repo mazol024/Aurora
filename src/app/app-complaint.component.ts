@@ -3,6 +3,7 @@ import {FormsModule} from '@angular/forms';
 import {FormControl} from '@angular/forms';
 import {NgModule} from '@angular/core';
 import {st} from '@angular/core/src/render3';
+import {forEach} from '@angular/router/src/utils/collection';
 
 @Component({
   selector: 'app-complaint',
@@ -10,6 +11,7 @@ import {st} from '@angular/core/src/render3';
   styleUrls: ['app-complaint.component.css']
 })
 export class AppComplaintComponent implements OnInit {
+  num1 = '';
   abonent = {num: '', name: '', address: ''
     , date: '', compl: '',
     disstaff: '', advice: '', status: '', category: '', complited: '', distype: ''
@@ -29,12 +31,35 @@ export class AppComplaintComponent implements OnInit {
     { num: 'ZZW/12', name: 'Nick', address: '61 Princess Street, Dunedin, 9013', date: '17/04/2015', compl: 'Flicking during mornig',
       disstaff: 'NF', advice: '-', status: 'Finish', category: 'JP', complited: '12/05/2015', distype: 'Low'}
   ];
-  addComplaint() {
-    this.complaintsList.push(this.abonent);
-    this.abonent = {num: '', name: '', address: ''
+  clearForm() {
+    this.abonent = {
+      num: '', name: '', address: ''
       , date: '', compl: '',
       disstaff: '', advice: '', status: '', category: '', complited: '', distype: ''
     };
+  }
+  addComplaint() {
+    if (this.abonent.name !== '' && this.abonent.num !== '' && this.abonent.address !== '') {
+      this.complaintsList.push(this.abonent);
+    this.abonent = {
+      num: '', name: '', address: ''
+      , date: '', compl: '',
+      disstaff: '', advice: '', status: '', category: '', complited: '', distype: ''
+    };
+  }
+  }
+  editComplaint() {
+    if (this.abonent.name !== '' && this.abonent.num !== '' && this.abonent.address !== '') {
+      let ind = 0;
+      ind = this.complaintsList.findIndex(value => value['num'] === this.num1);
+      this.complaintsList.splice(ind, 1);
+      this.complaintsList.push(this.abonent);
+      this.abonent = {
+        num: '', name: '', address: ''
+        , date: '', compl: '',
+        disstaff: '', advice: '', status: '', category: '', complited: '', distype: ''
+      };
+    }
   }
 
   constructor() {}
@@ -53,5 +78,6 @@ export class AppComplaintComponent implements OnInit {
     this.abonent.category = category;
     this.abonent.complited = complited;
     this.abonent.distype = distype;
+    this.num1 = num;
   }
 }

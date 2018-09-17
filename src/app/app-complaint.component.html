@@ -12,7 +12,11 @@
 <label for="category">Complaint Category:</label><input type="text" name="category" id="category" size="7" [(ngModel)]="abonent.category" />
 <label for="complited">Complited:</label><input type="text" name="complited" id="complited" size="8" [(ngModel)]="abonent.complited" />
 <label for="distype">Dis. Type:</label><input type="text" name="distype" id="distype" size="4" [(ngModel)]="abonent.distype" />
-  <button id="addcomplaint" name="addcomplaint" (click)="addComplaint()">Add Complaint</button>
+    <div class="butttons">
+    <button id="clearcomplaint" name="clearcomplaint" (click)="clearForm()">Clear Form</button>
+    <button id="addcomplaint" name="addcomplaint" (click)="addComplaint()">Add Complaint</button>
+    <button id="editcomplaint" name="editcomplaint" (click)="editComplaint()">Update Complaint</button>
+    </div>
   </form>
 </section>
 <br/>
