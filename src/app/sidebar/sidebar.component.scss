@@ -1,0 +1,31 @@
+nav {
+    background: #f7941e ;/*Aurora orange*/
+    height: 100%;
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+
+            a {
+                color: #fff;
+                padding: 20px;
+                display: block;
+                
+            }
+
+            .activated {
+                background-color: #00a8ff;
+            }
+            a:hover {
+                background-color: #00a8ff;
+            }
+            .active{
+                background-color: #00a8ff;
+            }
+        }
+    }
+    
+}

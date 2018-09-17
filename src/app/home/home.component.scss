@@ -1,0 +1,28 @@
+
+#main-content-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 5vh;
+    
+    svg{
+        height: 40vh;
+    }
+
+    a{
+        text-decoration: none;
+        color: black;
+    }
+
+    a:hover {
+        background-color: #00a8ff;
+    }
+
+    .outage-voltage-app{
+       align-self: center;
+       justify-self: center;
+       text-align: center;
+       padding: 1fr;
+    }
+
+}
+

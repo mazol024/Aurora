@@ -1,4 +1,16 @@
-<div class="app">
-  <app-complaint></app-complaint>
+<!-- This is the main layout of the page.
+  We have the header at the top,
+  Followed by a div the contains the side-bar and 
+  another div with the main content (This is formatted as a grid in the CSS).
+  If we add a footer place it below the end </div> tag -->
+<div id="header">
+  <app-header></app-header>
 </div>
-<br/>
+
+<div id="container">
+  <app-sidebar></app-sidebar>
+
+  <div id="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

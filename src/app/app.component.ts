@@ -6,8 +6,9 @@ import {NgModule} from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: 'app.component.html',
-  styles: ['.app {color: white; background-color:#f58220;margin:3px;padding: 3px;}']
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  title = 'Aurora-App';
 }
