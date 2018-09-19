@@ -1,12 +1,51 @@
 <section id="header1">
-  <img src="./assets/logo.svg">
+  <img src="./../assets/logo.svg">
 </section>
 <body>
-<section style="background-image: url('./assets/get-connected.jpg');background-size:  cover; display: block;width: 100%;height: 320px "></section>
+<section style="background-image: url('./../assets/get-connected.jpg');background-size:  cover; display: block;width: 100%;height: 320px "></section>
 <h2><em>Electricity Outages Form</em></h2>
 <br/>
-
-<p>
-  app-outages works!
-</p>
+<section style="border-radius: 5px">
+  <form>
+    <label for="num">Incident Num:</label><input #num type="text"  name="num" id="num"  size="8" [(ngModel)]="outage.num" />
+    <label for="fzone">Fault Zone: </label> <input #fzone type="text" name="fzone" id="fzone" size="30" [(ngModel)]="outage.fzone" />
+    <label for="ftype">Fault Type:</label><input #ftype type="text" name="ftype" id="ftype" size="30" [(ngModel)]="outage.ftype" />
+    <label for="subname">Substation Name:</label><input type="text" name="subname" id="subname" size="50" [(ngModel)]="outage.subname" />
+    <label for="circid">Circuit Id:</label><input type="text" name="circid" id="circid" size="60" [(ngModel)]="outage.circid" />
+    <hr>
+    <label for="equip">Equipment:</label><input type="text" name="equip" id="equip" size="30" [(ngModel)]="outage.equip" />
+    <label for="voltage">Voltage:</label><input type="text" name="voltage" id="voltage" size="4" [(ngModel)]="outage.voltage" />
+    <label for="cause">Cause:</label><input type="text" name="cause" id="cause" size="65" [(ngModel)]="outage.cause" />
+    <label for="natoffault">Nature of Fault:</label><input type="text" name="natoffault" id="natoffault" size="30" [(ngModel)]="outage.natoffault" />
+    <label for="locat">Location:</label><input type="text" name="locat" id="locat" size="45" [(ngModel)]="outage.locat" />
+    <label for="discr">Discription:</label><input type="text" name="discr" id="discr" size="70" [(ngModel)]="outage.discr" />
+    <div class="butttons">
+      <button id="clearoutage" name="clearoutage" (click)="clearForm()">Clear Form</button>
+      <button id="addoutage" name="addoutage" (click)="addOutage()">Add Outage</button>
+      <button id="editoutage" name="editoutage" (click)="editOutage()">Update Outage</button>
+    </div>
+  </form>
+</section>
+<hr>
+<h2>
+  <em> Outages Register</em>
+</h2>
+<br/>
+<div class="dataArea">
+<div class="selectorLine" *ngFor="let item of outages" (click)="onSelectRow(item.num, item.fzone, item.ftype,item.subname,item.circid,
+    item.equip,item.voltage,item.cause,item.natoffault,item.locat,item.discr)">
+  <div class="dataCell">{{item.num}}</div>
+   <div class="dataCell">{{item.fzone}}</div>
+  <div class="dataCell">{{item.ftype}}</div>
+  <div class="dataCell">{{item.subname}}</div>
+  <div class="dataCell">{{item.circid}}</div>
+  <div class="dataCell">{{item.equip}}</div>
+  <div class="dataCell">{{item.voltage}}</div>
+  <div class="dataCell">{{item.cause}}</div>
+  <div class="dataCell">{{item.natoffault}}</div>
+  <div class="dataCell">{{item.locat}}</div>
+  <div class="dataCell">{{item.discr}}</div>
+  <div style="clear: left"></div>
+</div>
+</div>
 </body>

@@ -1,8 +1,8 @@
 <section id="header1">
-  <img src="./assets/logo.svg">
+  <img src="./../assets/logo.svg">
 </section>
 <body>
-<section style="background-image: url('./assets/about.jpg');background-size:  cover; display: block;width: 100%;height: 320px "></section>
+<section style="background-image: url('./../assets/about.jpg');background-size:  cover; display: block;width: 100%;height: 320px "></section>
 <h2><em>Electricity Complaint Form</em></h2>
 <br/>
 <section style="border-radius: 5px">
@@ -33,21 +33,21 @@
 <em> Voltage Complaints Register</em>
 </h2>
 <br/>
-<div class='complaintsList'>
-  <div class="line01" *ngFor="let abonent of complaintsList" (click)="onSelectRow(abonent.num, abonent.name, abonent.address,
+<div class='dataArea'>
+  <div class="selectorLine" *ngFor="let abonent of complaintsList" (click)="onSelectRow(abonent.num, abonent.name, abonent.address,
   abonent.date, abonent.compl, abonent.disstaff, abonent.advice, abonent.status, abonent.category,
   abonent.complited, abonent.distype)">
-    <div class='complaint'>{{abonent.num}}</div>
-    <div class='complaint'>{{abonent.name}}</div>
-    <div class='complaint'>{{abonent.address}}</div>
-    <div class='complaint'>{{abonent.date}}</div>
-    <div class='complaint'>{{abonent.compl}}</div>
-    <div class='complaint'>{{abonent.disstaff}}</div>
-    <div class='complaint'>{{abonent.advice}}</div>
-    <div class='complaint'>{{abonent.status}}</div>
-    <div class='complaint'>{{abonent.category}}</div>
-    <div class='complaint'>{{abonent.complited}}</div>
-    <div class='complaint'>{{abonent.distype}}</div>
+    <div class='dataCell'>{{abonent.num}}</div>
+    <div class='dataCell'>{{abonent.name}}</div>
+    <div class='dataCell'>{{abonent.address}}</div>
+    <div class='dataCell'>{{abonent.date}}</div>
+    <div class='dataCell'>{{abonent.compl}}</div>
+    <div class='dataCell'>{{abonent.disstaff}}</div>
+    <div class='dataCell'>{{abonent.advice}}</div>
+    <div class='dataCell'>{{abonent.status}}</div>
+    <div class='dataCell'>{{abonent.category}}</div>
+    <div class='dataCell'>{{abonent.complited}}</div>
+    <div class='dataCell'>{{abonent.distype}}</div>
     <div style="clear: left"></div>
   </div>
 </div>
