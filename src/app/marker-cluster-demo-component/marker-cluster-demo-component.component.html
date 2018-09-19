@@ -1,0 +1,12 @@
+  <h2>Cluster markers simulating outages</h2>
+
+  <!-- Control Form -->
+  <form class="form" style="margin-bottom: 16px;">
+    <button type="button" class="btn btn-default" (click)="generateData()">Generate Data</button>
+  </form>
+
+  <!-- Map -->
+  <div class="map" leaflet  [leafletOptions]="options" [leafletBaseLayers]="baseLayers"
+    [leafletLayersControlOptions]="layersControlOptions" [leafletMarkerCluster]="markerClusterData"
+    [leafletMarkerClusterOptions]="markerClusterOptions" (leafletMarkerClusterReady)="markerClusterReady($event)">
+  </div>

@@ -5,4 +5,8 @@
      leaflet
      [leafletOptions]="options"
      [leafletLayersControl]="layersControl">
+
+     [leafletMarkerCluster]="markerClusterData"
+     [leafletMarkerClusterOptions]="markerClusterOptions"
+     (leafletMarkerClusterReady)="markerClusterReady($event)">
 </div>

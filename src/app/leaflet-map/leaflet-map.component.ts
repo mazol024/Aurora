@@ -1,20 +1,22 @@
-import { Component, OnInit } from "@angular/core";
-import { icon, latLng, marker, polyline, tileLayer } from "leaflet";
-declare let L;
+import { Component, OnInit } from '@angular/core';
+import { icon, latLng, marker, polyline, tileLayer, markerClusterGroup } from 'leaflet';
+import * as L from 'leaflet';
+import 'leaflet.markercluster';
+
 
 @Component({
-  selector: "app-leaflet-map",
-  templateUrl: "./leaflet-map.component.html",
-  styleUrls: ["./leaflet-map.component.scss"]
+  selector: 'app-leaflet-map',
+  templateUrl: './leaflet-map.component.html',
+  styleUrls: ['./leaflet-map.component.scss']
 })
-export class LeafletMapComponent {
+export class LeafletMapComponent implements OnInit {
   // Define our base layers so we can reference them multiple times
-  streetMaps = tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  streetMaps = tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     detectRetina: true,
     attribution:
       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
   });
-  wMaps = tileLayer("http://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png", {
+  wMaps = tileLayer('http://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png', {
     detectRetina: true,
     attribution:
       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -25,8 +27,8 @@ export class LeafletMapComponent {
     icon: icon({
       iconSize: [25, 41],
       iconAnchor: [13, 41],
-      iconUrl: "../../assets/leaflet/images/marker-icon.png",
-      shadowUrl: "../../assets/leaflet/images/leaflet/marker-shadow.png"
+      iconUrl: '../../assets/leaflet/images/marker-icon.png',
+      shadowUrl: '../../assets/leaflet/images/marker-shadow.png'
     })
   });
 
@@ -35,8 +37,8 @@ export class LeafletMapComponent {
     icon: icon({
       iconSize: [25, 41],
       iconAnchor: [13, 41],
-      iconUrl: "../../assets/leaflet/images/marker-icon.png",
-      shadowUrl: "../../assets/leaflet/images/leaflet/marker-shadow.png"
+      iconUrl: '../../assets/leaflet/images/marker-icon.png',
+      shadowUrl: '../../assets/leaflet/images/leaflet/marker-shadow.png'
     })
   });
 
@@ -59,16 +61,18 @@ export class LeafletMapComponent {
     [46.8528160918504, -121.76042997278273]
   ]);
 
+
+
   // Layers control object with our two base layers and the three overlay layers
   layersControl = {
     baseLayers: {
-      "Street Maps": this.streetMaps,
-      "Wikimedia Maps": this.wMaps
+      'Street Maps': this.streetMaps,
+      'Wikimedia Maps': this.wMaps
     },
     overlays: {
-      "Mt. Rainier Summit": this.summit,
-      "Mt. Rainier Paradise Start": this.paradise,
-      "Mt. Rainier Climb Route": this.route
+      'Mt. Rainier Summit': this.summit,
+      'Mt. Rainier Paradise Start': this.paradise,
+      'Mt. Rainier Climb Route': this.route
     }
   };
 
@@ -79,13 +83,34 @@ export class LeafletMapComponent {
     center: latLng([46.879966, -121.726909])
   };
 
-  /* options = {
-    layers: [
-      tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; OpenStreetMap contributors'
-      })
-    ],
-    zoom: 10,
-    center: latLng([ -45.87416, 170.50361 ])
-  };*/
+  // Marker Cluster stuff
+  markerClusterGroup: L.MarkerClusterGroup;
+  markerClusterData: any[] = [];
+  markerClusterOptions: L.CircleMarkerOptions;
+
+  // Generate lat/lon values
+  generateLat() {return Math.random() * 360 - 180; }
+  generateLon() {return Math.random() * 180 - 90; }
+
+  ngOnInit(): void {
+    this.generateData();
+  }
+
+  markerClusterReady(group: L.MarkerClusterGroup) {
+    this.markerClusterGroup = group;
+  }
+
+  generateData() {
+    const data: any[] = [];
+
+    for (let i = 0; i < 10000; i++) {
+      const icon = L.icon({
+        iconUrl: '2273e3d8ad9264b7daa5bdbf8e6b47f8.png',
+        shadowUrl: '44a526eed258222515aa21eaffd14a96.png'
+      });
+      data.push(L.marker([this.generateLon(), this.generateLat()], { icon }));
+    }
+    this.markerClusterData = data;
+  }
+
 }

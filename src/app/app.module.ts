@@ -1,3 +1,4 @@
+import { AppComplaintComponent } from './app-complaint.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -10,6 +11,9 @@ import { VoltageComplaintsComponent } from './voltage-complaints/voltage-complai
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { LeafletMapComponent } from './leaflet-map/leaflet-map.component';
+import { MarkerClusterDemoComponentComponent } from './marker-cluster-demo-component/marker-cluster-demo-component.component';
+
+import { LeafletMarkerClusterModule } from '@asymmetrik/ngx-leaflet-markercluster';
 
 @NgModule({
   declarations: [
@@ -19,15 +23,19 @@ import { LeafletMapComponent } from './leaflet-map/leaflet-map.component';
     VoltageComplaintsComponent,
     HomeComponent,
     HeaderComponent,
-    LeafletMapComponent
+    LeafletMapComponent,
+    MarkerClusterDemoComponentComponent,
+    AppComplaintComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    LeafletModule.forRoot()
+    LeafletModule.forRoot(),
+    LeafletMarkerClusterModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
